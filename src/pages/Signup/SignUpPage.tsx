@@ -3,7 +3,6 @@ import { FormProvider, useForm } from "react-hook-form";
 import {
   SignUpSchema,
   SignUpDefaultValues,
-  SignUpFormData,
 } from "../../Validations/signUp.schema";
 import Input from "../../components/ui/Input";
 import { Button, Stack, Title, Text, Anchor, Box } from "@mantine/core";
@@ -18,10 +17,10 @@ const SignUpPage = () => {
     resolver: zodResolver(SignUpSchema),
     defaultValues: SignUpDefaultValues,
   });
-  const onSubmit = (data: SignUpFormData) => {
+  const onSubmit = (data: any) => {
     const existingData = JSON.parse(localStorage.getItem("userData") || "[]");
     const emailexists = existingData.some(
-      (user: SignUpFormData) => user.email === data.email
+      (user: any) => user.email === data.email
     );
 
     console.log(emailexists, "check email");
