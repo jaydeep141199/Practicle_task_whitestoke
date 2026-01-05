@@ -14,4 +14,6 @@ const LoginDefaultValues = {
   password: "",
 };
 
+export type LoginFormData = z.infer<typeof LoginSchema>;
+
 export { LoginSchema, LoginDefaultValues };

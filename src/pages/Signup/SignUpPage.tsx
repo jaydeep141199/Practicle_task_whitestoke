@@ -4,6 +4,7 @@ import {
   SignUpSchema,
   SignUpDefaultValues,
 } from "../../Validations/signUp.schema";
+import type { SignUpFormData } from "../../Validations/signUp.schema";
 import Input from "../../components/ui/Input";
 import { Button, Stack, Title, Text, Anchor, Box } from "@mantine/core";
 import { useNavigate } from "react-router-dom";
@@ -17,10 +18,10 @@ const SignUpPage = () => {
     resolver: zodResolver(SignUpSchema),
     defaultValues: SignUpDefaultValues,
   });
-  const onSubmit = (data: any) => {
+  const onSubmit = (data: SignUpFormData) => {
     const existingData = JSON.parse(localStorage.getItem("userData") || "[]");
     const emailexists = existingData.some(
-      (user: any) => user.email === data.email
+      (user: SignUpFormData) => user.email === data.email
     );
 
     console.log(emailexists, "check email");

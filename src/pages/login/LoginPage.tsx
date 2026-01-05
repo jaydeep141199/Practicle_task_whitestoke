@@ -1,7 +1,8 @@
 import { FormProvider, useForm } from "react-hook-form";
 import Input from "../../components/ui/Input";
-import { LoginSchema, LoginDefaultValues, LoginFormData } from "../../Validations/Login.schema";
-import { SignUpFormData } from "../../Validations/signUp.schema";
+import { LoginSchema, LoginDefaultValues } from "../../Validations/Login.schema";
+import type { LoginFormData } from "../../Validations/Login.schema";
+import type { SignUpFormData } from "../../Validations/signUp.schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button, Stack, Title, Text, Anchor, Box } from "@mantine/core";
 import { useNavigate } from "react-router-dom";
